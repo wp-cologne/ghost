@@ -1,0 +1,37 @@
+@use 'sass:list';
+@use '../abstracts' as a;
+
+:root {
+
+  // 1. Farben 
+  @each $name, $value in a.$colors {
+    --#{$name}: #{$value};
+  }
+
+  // 2. Fluid Typografie
+  @each $name, $values in a.$font-size-map {
+    --text-#{$name}: #{a.fluid(list.nth($values, 1), list.nth($values, 2))};
+  }
+
+  // 3. Spacing
+  @each $name, $value in a.$space-map {
+    --space-#{$name}: #{$value};
+  }
+
+  // 4. Layout
+  --container-max-width: #{a.$container-max-width};
+  --grid-gap: var(--space-m);
+  --grid-cols: #{a.$grid-columns};
+  --grid-min: 300px;
+
+  @for $i from 1 through a.$grid-columns {
+    --grid-#{$i}: repeat(#{$i}, minmax(0, 1fr));
+    --span-#{$i}: span #{$i};
+  }
+
+  --grid-auto: repeat(auto-fit, minmax(min(100%, var(--grid-min)), 1fr));
+  --span-full: 1 / -1;
+
+  --body-bg: var(--bg);
+  --body-text: var(--text);
+}

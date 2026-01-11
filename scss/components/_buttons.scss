@@ -1,0 +1,59 @@
+@use 'sass:color';
+@use '../abstracts' as a;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-s) var(--space-l);
+  font-size: var(--text-m);
+  font-weight: 700;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  line-height: 1.2;
+
+  // Disabled State
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  // --- Größen-Varianten ---
+  &--small {
+    padding: var(--space-xs) var(--space-m);
+    font-size: var(--text-s);
+  }
+
+  &--large {
+    padding: var(--space-m) var(--space-xl);
+    font-size: var(--text-l);
+  }
+
+  // --- Farb-Varianten Loop ---
+  // Erstellt .btn--primary, .btn--secondary, etc.
+  @each $name, $value in a.$colors {
+    &--#{$name} {
+      background-color: var(--color-#{$name});
+      color: var(--white); 
+
+      &:hover, &:focus {
+        background-color: color.scale($value, $lightness: -10%);
+      }
+    }
+
+    // Outline Variante (.btn--outline-primary)
+    &--outline-#{$name} {
+      background-color: transparent;
+      border-color: var(--color-#{$name});
+      color: var(--color-#{$name});
+
+      &:hover, &:focus {
+        background-color: var(--color-#{$name});
+        color: var(--white);
+      }
+    }
+  }
+}

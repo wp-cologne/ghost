@@ -1,0 +1,48 @@
+@use 'functions' as f;
+
+// --- 1. Farben ---
+$colors: (
+  'primary': #3498db,
+  'secondary': #2ecc71,
+  'text': #1f2937,
+  'bg': #f9fafb,
+  'white': #ffffff,
+  'dark': #111827,
+  'muted': #e5e7eb,
+);
+
+// --- 2. Typografie (Modular Scale) ---
+// Einstellungen
+$type-base-min: 16px; 
+$type-base-max: 18px; 
+$type-scale-min: 1.2;  // Mobile Ratio (Minor Third)
+$type-scale-max: 1.333; // Desktop Ratio (Perfect Fourth)
+
+// Generierte Map
+$font-size-map: (
+  'xs':  (f.modular-scale($type-base-min, $type-scale-min, -2), f.modular-scale($type-base-max, $type-scale-max, -2)),
+  's':   (f.modular-scale($type-base-min, $type-scale-min, -1), f.modular-scale($type-base-max, $type-scale-max, -1)),
+  'm':   (f.modular-scale($type-base-min, $type-scale-min,  0), f.modular-scale($type-base-max, $type-scale-max,  0)),
+  'l':   (f.modular-scale($type-base-min, $type-scale-min,  1), f.modular-scale($type-base-max, $type-scale-max,  1)),
+  'xl':  (f.modular-scale($type-base-min, $type-scale-min,  2), f.modular-scale($type-base-max, $type-scale-max,  2)),
+  'xxl': (f.modular-scale($type-base-min, $type-scale-min,  3), f.modular-scale($type-base-max, $type-scale-max,  3)),
+  '3xl': (f.modular-scale($type-base-min, $type-scale-min,  4), f.modular-scale($type-base-max, $type-scale-max,  4))
+);
+
+// --- 3. Spacing (Lineare Skala) ---
+$space-unit: 8px; // Basis
+$space-map: (
+  'none': 0,
+  'xs':   $space-unit * 0.5, // 4px
+  's':    $space-unit * 1,   // 8px
+  'm':    $space-unit * 2,   // 16px
+  'l':    $space-unit * 3,   // 24px
+  'xl':   $space-unit * 4,   // 32px
+  'xxl':  $space-unit * 8,   // 64px
+  'huge': $space-unit * 16   // 128px
+);
+
+// 4. Layout - Grid Config //
+
+$container-max-width: 1280px; // Standard Breite der Website
+$grid-columns: 12;            // Standard Spaltenanzahl

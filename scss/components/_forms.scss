@@ -1,0 +1,71 @@
+@use 'sass:map';
+@use '../abstracts' as a;
+
+// Gemeinsame Styles für Inputs und Textareas
+%input-base {
+  display: block;
+  width: 100%;
+  padding: var(--space-s) var(--space-m);
+  font-size: var(--text-m);
+  font-family: inherit;
+  color: var(--body-text);
+  background-color: var(--white);
+  border: 1px solid #ccc; 
+  border-radius: 4px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  // Placeholder Farbe
+  &::placeholder {
+    color: #aaa;
+  }
+
+&:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(map.get(a.$colors, 'primary'), 0.2);
+  }
+  
+  &:disabled {
+    background-color: var(--muted);
+    cursor: not-allowed;
+  }
+}
+
+// Die Klassen
+.form-group {
+  margin-bottom: var(--space-m);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+  font-size: var(--text-s);
+}
+
+.form-input,
+.form-select {
+  @extend %input-base;
+}
+
+.form-textarea {
+  @extend %input-base;
+  min-height: 120px;
+  resize: vertical; 
+}
+
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  margin-bottom: var(--space-s);
+  
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: 1.2em;
+    height: 1.2em;
+    accent-color: var(--primary);
+    cursor: pointer;
+  }
+}

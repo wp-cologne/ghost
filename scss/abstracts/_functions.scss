@@ -1,0 +1,32 @@
+@use 'sass:math';
+@use 'sass:meta'; 
+
+// 1. Helper: Einheit entfernen
+@function strip-unit($number) {
+  @if meta.type-of($number) == 'number' and not math.is-unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+  @return $number;
+}
+
+// 2. Helper: Modular Scale
+@function modular-scale($base, $ratio, $step) {
+  @return $base * math.pow($ratio, $step);
+}
+
+// 3. Fluid Typography
+@function fluid($min-size, $max-size, $min-vw: 375px, $max-vw: 1400px) {
+  $u1: math.unit($min-vw); 
+  $u2: math.unit($max-vw); 
+  $u3: math.unit($min-size); 
+  $u4: math.unit($max-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    $slope: math.div($max-size - $min-size, $max-vw - $min-vw);
+    $y-intersection: -$min-vw * $slope + $min-size;
+    $slope-vw: $slope * 100vw;
+    @return clamp(#{$min-size}, #{$y-intersection} + #{$slope-vw}, #{$max-size});
+  } @else {
+    @error "Alle Einheiten müssen gleich sein (z.B. px).";
+  }
+}

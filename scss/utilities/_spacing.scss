@@ -1,0 +1,23 @@
+@use '../abstracts' as a;
+
+$sides: (
+  'm': 'margin',   'p': 'padding',
+  'mt': 'margin-top', 'mb': 'margin-bottom',
+  'pt': 'padding-top', 'pb': 'padding-bottom',
+  'ml': 'margin-left', 'mr': 'margin-right',
+  'pl': 'padding-left', 'pr': 'padding-right'
+);
+
+@each $prefix, $prop in $sides {
+  @each $size, $val in a.$space-map {
+    .#{$prefix}-#{$size} { #{$prop}: var(--space-#{$size}); }
+  }
+}
+
+// Achsen (X / Y)
+@each $size, $val in a.$space-map {
+  .mx-#{$size} { margin-left: var(--space-#{$size}); margin-right: var(--space-#{$size}); }
+  .my-#{$size} { margin-top: var(--space-#{$size}); margin-bottom: var(--space-#{$size}); }
+  .px-#{$size} { padding-left: var(--space-#{$size}); padding-right: var(--space-#{$size}); }
+  .py-#{$size} { padding-top: var(--space-#{$size}); padding-bottom: var(--space-#{$size}); }
+}

@@ -1,0 +1,5 @@
+@use '../abstracts' as a;
+
+@each $name, $val in a.$font-size-map {
+  .text--#{$name} { font-size: var(--text-#{$name}); }
+}

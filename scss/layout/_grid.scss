@@ -1,0 +1,30 @@
+@use '../abstracts' as a;
+
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-m);
+}
+
+
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+
+  grid-template-columns: 1fr; // Mobile First
+
+  @include a.mq('tablet') {
+    @for $i from 1 through a.$grid-columns {
+      &--#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+
+  // Smart Grid (Auto-Fit)
+  &--auto {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
+}
