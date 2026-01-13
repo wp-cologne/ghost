@@ -36,9 +36,9 @@
   // Erstellt .btn--primary, .btn--secondary, etc.
   @each $name, $value in a.$colors {
     &--#{$name} {
-      background-color: var(--color-#{$name});
+      background-color: var(--#{$name});
       color: var(--white); 
-
+      border-color:var(--#{$name});
       &:hover, &:focus {
         background-color: color.scale($value, $lightness: -10%);
       }
@@ -47,11 +47,11 @@
     // Outline Variante (.btn--outline-primary)
     &--outline-#{$name} {
       background-color: transparent;
-      border-color: var(--color-#{$name});
-      color: var(--color-#{$name});
+      border-color: var(--#{$name});
+      color: var(--#{$name});
 
       &:hover, &:focus {
-        background-color: var(--color-#{$name});
+        background-color: var(--#{$name});
         color: var(--white);
       }
     }

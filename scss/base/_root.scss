@@ -9,6 +9,7 @@
   }
 
   // 2. Fluid Typografie
+  --root-font-size: #{a.$root-font-size};
   @each $name, $values in a.$font-size-map {
     --text-#{$name}: #{a.fluid(list.nth($values, 1), list.nth($values, 2))};
   }

@@ -40,7 +40,6 @@ Du hast zwei Möglichkeiten, Ghost zu nutzen, je nach Projektart:
     ```
 
 ### Option B: WordPress 
-
 Ghost CSS beinhaltet ein natives WordPress Plugin. Erstelle einen Ordner (ghost-css) unter wp-content/plugins/ und füge die Dateien und Ordner dieses Repositries hinzu.
 
 ---

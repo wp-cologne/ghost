@@ -1,14 +1,15 @@
 @use "sass:meta";
-@use 'abstracts'; 
+@use 'abstracts';
 
 @layer ghost {
   @include meta.load-css('base/root');
   @include meta.load-css('base/reset');
-  @include meta.load-css('base/typography');
-  @include meta.load-css('layout/grid');
-  @include meta.load-css('components/buttons');
-  @include meta.load-css('components/forms');
-  @include meta.load-css('utilities/spacing');
-  @include meta.load-css('utilities/text');
-  @include meta.load-css('utilities/radius');
 }
+
+@include meta.load-css('base/typography');
+@include meta.load-css('layout/grid');
+@include meta.load-css('components/buttons');
+@include meta.load-css('components/forms');
+@include meta.load-css('utilities/spacing');
+@include meta.load-css('utilities/text');
+@include meta.load-css('utilities/radius');

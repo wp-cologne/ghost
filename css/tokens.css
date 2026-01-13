@@ -5,7 +5,9 @@
   --bg: #f9fafb;
   --white: #ffffff;
   --dark: #111827;
+  --black: #000000;
   --muted: #e5e7eb;
+  --root-font-size: 100%;
   --text-xs: clamp(11.1111111111px, 11.4700306399px + -0.0957118743vw, 10.1300643991px);
   --text-s: clamp(13.3333333333px, 13.2711226587px + 0.0165895132vw, 13.503375844px);
   --text-m: clamp(16px, 15.2682926829px + 0.1951219512vw, 18px);
@@ -15,6 +17,8 @@
   --text-3xl: clamp(33.1776px, 24.5235434159px + 2.3077484224vw, 56.8320213298px);
   --space-none: 0;
   --space-xs: 4px;
+  --space-s: 6px;
+  --space-m: 8px;
   --space-l: 24px;
   --space-xl: 32px;
   --space-xxl: 64px;

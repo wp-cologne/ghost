@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Ghost CSS
  * Description: The Invisible Architecture for Modern Web Design.

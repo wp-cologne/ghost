@@ -8,40 +8,44 @@ $colors: (
   'bg': #f9fafb,
   'white': #ffffff,
   'dark': #111827,
+  'black': #000000,
   'muted': #e5e7eb,
 );
 
 // --- 2. Typografie (Modular Scale) ---
-$type-base-min: 16px; 
-$type-base-max: 18px; 
-$type-scale-min: 1.2;  // Mobile Ratio (Minor Third)
+$root-font-size: 100%;
+$type-base-min: 16px;
+$type-base-max: 18px;
+$type-scale-min: 1.2; // Mobile Ratio (Minor Third)
 $type-scale-max: 1.333; // Desktop Ratio (Perfect Fourth)
 
 // Generierte Map
 $font-size-map: (
-  'xs':  (f.modular-scale($type-base-min, $type-scale-min, -2), f.modular-scale($type-base-max, $type-scale-max, -2)),
-  's':   (f.modular-scale($type-base-min, $type-scale-min, -1), f.modular-scale($type-base-max, $type-scale-max, -1)),
-  'm':   (f.modular-scale($type-base-min, $type-scale-min,  0), f.modular-scale($type-base-max, $type-scale-max,  0)),
-  'l':   (f.modular-scale($type-base-min, $type-scale-min,  1), f.modular-scale($type-base-max, $type-scale-max,  1)),
-  'xl':  (f.modular-scale($type-base-min, $type-scale-min,  2), f.modular-scale($type-base-max, $type-scale-max,  2)),
-  'xxl': (f.modular-scale($type-base-min, $type-scale-min,  3), f.modular-scale($type-base-max, $type-scale-max,  3)),
-  '3xl': (f.modular-scale($type-base-min, $type-scale-min,  4), f.modular-scale($type-base-max, $type-scale-max,  4))
+  'xs': (f.modular-scale($type-base-min, $type-scale-min, -2), f.modular-scale($type-base-max, $type-scale-max, -2)),
+  's': (f.modular-scale($type-base-min, $type-scale-min, -1), f.modular-scale($type-base-max, $type-scale-max, -1)),
+  'm': (f.modular-scale($type-base-min, $type-scale-min, 0), f.modular-scale($type-base-max, $type-scale-max, 0)),
+  'l': (f.modular-scale($type-base-min, $type-scale-min, 1), f.modular-scale($type-base-max, $type-scale-max, 1)),
+  'xl': (f.modular-scale($type-base-min, $type-scale-min, 2), f.modular-scale($type-base-max, $type-scale-max, 2)),
+  'xxl': (f.modular-scale($type-base-min, $type-scale-min, 3), f.modular-scale($type-base-max, $type-scale-max, 3)),
+  '3xl': (f.modular-scale($type-base-min, $type-scale-min, 4), f.modular-scale($type-base-max, $type-scale-max, 4))
 );
 
 // --- 3. Spacing (Lineare Skala) ---
 $space-unit: 8px; // Basis
 $space-map: (
   'none': 0,
-  'xs':   $space-unit * 0.5,
-  'l':    $space-unit * 3,
-  'xl':   $space-unit * 4,
-  'xxl':  $space-unit * 8,
+  'xs': $space-unit * 0.5,
+  's': $space-unit * 0.75,
+  'm': $space-unit * 1,
+  'l': $space-unit * 3,
+  'xl': $space-unit * 4,
+  'xxl': $space-unit * 8,
   'huge': $space-unit * 16
 );
 
 // --- 4. Layout ---
 $container-max-width: 1280px; // Standard Breite der Website
-$grid-columns: 12;            // Standard Spaltenanzahl
+$grid-columns: 12; // Standard Spaltenanzahl
 $gap-x: clamp(1.5rem, 4vw + 1rem, 4rem); // Seitlicher Abstand (Padding Inline)
 $gap-y: clamp(3rem, 10vw, 8rem); // Vertikaler Abstand zwischen Sektionen (Padding Block)
 
@@ -49,11 +53,11 @@ $gap-y: clamp(3rem, 10vw, 8rem); // Vertikaler Abstand zwischen Sektionen (Paddi
 $radius-unit: 4px; // Basis
 $radius-map: (
   'none': 0,
-  'xs':   $radius-unit * 0.5,
-  's':    $radius-unit * 1,
-  'm':    $radius-unit * 2,
-  'l':    $radius-unit * 3,
-  'xl':   $radius-unit * 4,
-  'xxl':  $radius-unit * 8,
+  'xs': $radius-unit * 0.5,
+  's': $radius-unit * 1,
+  'm': $radius-unit * 2,
+  'l': $radius-unit * 3,
+  'xl': $radius-unit * 4,
+  'xxl': $radius-unit * 8,
   'circle': 500vh,
 );
