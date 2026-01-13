@@ -28,3 +28,8 @@
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   }
 }
+
+:where(section:not(section section)) {
+  padding-block: var(--gap-y);
+  padding-inline: var(--gap-x);
+}

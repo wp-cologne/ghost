@@ -12,7 +12,6 @@ $colors: (
 );
 
 // --- 2. Typografie (Modular Scale) ---
-// Einstellungen
 $type-base-min: 16px; 
 $type-base-max: 18px; 
 $type-scale-min: 1.2;  // Mobile Ratio (Minor Third)
@@ -40,10 +39,11 @@ $space-map: (
   'huge': $space-unit * 16
 );
 
-// --- 4. Layout - Grid Config ---
-
+// --- 4. Layout ---
 $container-max-width: 1280px; // Standard Breite der Website
 $grid-columns: 12;            // Standard Spaltenanzahl
+$gap-x: clamp(1.5rem, 4vw + 1rem, 4rem); // Seitlicher Abstand (Padding Inline)
+$gap-y: clamp(3rem, 10vw, 8rem); // Vertikaler Abstand zwischen Sektionen (Padding Block)
 
 // --- 5. Radius --- 
 $radius-unit: 4px; // Basis

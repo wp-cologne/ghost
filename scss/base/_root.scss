@@ -23,6 +23,8 @@
   --grid-gap: var(--space-m);
   --grid-cols: #{a.$grid-columns};
   --grid-min: 300px;
+  --gap-x: #{a.$gap-x};
+  --gap-y: #{a.$gap-y};
 
   @for $i from 1 through a.$grid-columns {
     --grid-#{$i}: repeat(#{$i}, minmax(0, 1fr));
@@ -35,7 +37,7 @@
   --body-bg: var(--bg);
   --body-text: var(--text);
 
-    // 5. Radius
+  // 5. Radius
   @each $name, $value in a.$radius-map {
     --radius-#{$name}: #{$value};
   }
