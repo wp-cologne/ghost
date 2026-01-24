@@ -3,23 +3,23 @@
 
 :root {
 
-  // 1. Farben 
+  // Farben 
   @each $name, $value in a.$colors {
     --#{$name}: #{$value};
   }
 
-  // 2. Fluid Typografie
+  // Fluid Typografie
   --root-font-size: #{a.$root-font-size};
   @each $name, $values in a.$font-size-map {
     --text-#{$name}: #{a.fluid(list.nth($values, 1), list.nth($values, 2))};
   }
 
-  // 3. Spacing
+  // Spacing
   @each $name, $value in a.$space-map {
     --space-#{$name}: #{$value};
   }
 
-  // 4. Layout
+  // Layout
   --container-max-width: #{a.$container-max-width};
   --grid-gap: var(--space-m);
   --grid-cols: #{a.$grid-columns};
@@ -38,10 +38,15 @@
   --body-bg: var(--bg);
   --body-text: var(--text);
 
-  // 5. Radius
+  // Radius
   @each $name, $value in a.$radius-map {
     --radius-#{$name}: #{$value};
   }
+
+  // Width
+  @each $name, $value in a.$width-map {
+  --width-#{$name}: calc(var(--container-max-width) * #{$value});
+}
 
 
 }

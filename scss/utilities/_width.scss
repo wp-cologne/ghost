@@ -1,0 +1,39 @@
+@use '../abstracts' as a;
+@use 'sass:math';
+
+// Width-Klassen
+@each $name, $value in a.$width-map {
+  .width--#{$name}:not([class*="breakout--"]) {
+    inline-size: var(--width-#{$name});
+    max-inline-size: 100%;
+  }
+}
+
+// Breakouts
+@media (min-width: a.$container-max-width) {
+  @each $name, $value in a.$breakout-map {
+    @if $name != 'full' {
+      .breakout--#{$name} {
+        --_breakout-width: #{$value * 100vw};
+        --_breakout-offset: calc((#{$value * 50vw}) - 50%);
+        inline-size: var(--_breakout-width) !important;
+        max-inline-size: var(--_breakout-width) !important;
+        margin-inline: calc(var(--_breakout-offset) * -1) !important;
+      }
+    }
+  }
+}
+
+.breakout--full {
+  inline-size: 100vw !important;
+  max-inline-size: 100vw !important;
+  margin-inline: calc(-50vw + 50%) !important;
+}
+
+@media (max-width: a.$container-max-width) {
+  [class*="breakout--"]:not(.breakout--full) {
+    inline-size: 100% !important;
+    max-inline-size: 100% !important;
+    margin-inline: 0 !important;
+  }
+}

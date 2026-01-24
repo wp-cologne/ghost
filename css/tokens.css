@@ -23,7 +23,7 @@
   --space-xl: 32px;
   --space-xxl: 64px;
   --space-huge: 128px;
-  --container-max-width: 1280px;
+  --container-max-width: 1366px;
   --grid-gap: var(--space-m);
   --grid-cols: 12;
   --grid-min: 300px;
@@ -65,4 +65,11 @@
   --radius-xl: 16px;
   --radius-xxl: 32px;
   --radius-circle: 500vh;
+  --width-xs: calc(var(--container-max-width) * 0.1);
+  --width-s: calc(var(--container-max-width) * 0.2);
+  --width-m: calc(var(--container-max-width) * 0.4);
+  --width-l: calc(var(--container-max-width) * 0.6);
+  --width-xl: calc(var(--container-max-width) * 0.8);
+  --width-xxl: calc(var(--container-max-width) * 0.9);
+  --width-full: calc(var(--container-max-width) * 1);
 }

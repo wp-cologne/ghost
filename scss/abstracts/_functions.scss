@@ -1,7 +1,8 @@
 @use 'sass:math';
 @use 'sass:meta'; 
+@use 'config' as c;
 
-// 1. Helper: Einheit entfernen
+// Helper: Einheit entfernen
 @function strip-unit($number) {
   @if meta.type-of($number) == 'number' and not math.is-unitless($number) {
     @return math.div($number, ($number * 0 + 1));
@@ -9,12 +10,17 @@
   @return $number;
 }
 
-// 2. Helper: Modular Scale
-@function modular-scale($base, $ratio, $step) {
-  @return $base * math.pow($ratio, $step);
+// Helper: px zu rem
+@function rem($px) {
+  @return math.div(strip-unit($px), c.$type-base-min) * 1rem;
 }
 
-// 3. Fluid Typography
+// Helper: Modular Scale
+@function modular-scale($base, $ratio, $step) {
+  @return $base * math.pow($ratio, $step) * 1px;
+}
+
+// Fluid Typography
 @function fluid($min-size, $max-size, $min-vw: 375px, $max-vw: 1400px) {
   $u1: math.unit($min-vw); 
   $u2: math.unit($max-vw); 
