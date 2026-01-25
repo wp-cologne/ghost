@@ -441,7 +441,7 @@ p {
   cursor: pointer;
 }
 
-.stretched-link::after {
+a.stretched-link::after, .stretched-link > a::after {
   position: absolute;
   inset: 0;
   z-index: 1;

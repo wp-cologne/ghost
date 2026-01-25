@@ -441,6 +441,13 @@ p {
   cursor: pointer;
 }
 
+a.stretched-link::after, .stretched-link > a::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+}
+
 .margin--none {
   margin: var(--space-none);
 }
