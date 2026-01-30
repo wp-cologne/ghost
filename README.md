@@ -24,12 +24,12 @@ Du hast zwei Möglichkeiten, Ghost zu nutzen, je nach Projektart:
 
 1. Klone das Repository:
 ```bash
-   git clone https://github.com/wp-cologne/ghost.git
+   git clone https://github.com/wp-cologne/ghostcss.git
 ```
 
 2. Verlinke die CSS-Datei im `<head>` deiner Seite:
 ```html
-   <link rel="stylesheet" href="path/to/ghost-css/css/standalone.css">
+   <link rel="stylesheet" href="path/to/ghostcss/css/standalone.css">
 ```
 
 3. Nutze das HTML-Gerüst (Container, Grid, etc.):
@@ -44,7 +44,7 @@ Du hast zwei Möglichkeiten, Ghost zu nutzen, je nach Projektart:
 
 ### Option B: WordPress
 
-Ghost CSS beinhaltet ein natives WordPress Plugin. Erstelle einen Ordner (ghost-css) unter wp-content/plugins/ und füge die Dateien und Ordner dieses Repositries hinzu.
+Ghost CSS beinhaltet ein natives WordPress Plugin. Erstelle einen Ordner (ghostcss) unter wp-content/plugins/ und füge die Dateien und Ordner dieses Repositries hinzu.
 
 ---
 
