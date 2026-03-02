@@ -45,6 +45,7 @@ Du hast zwei Möglichkeiten, Ghost zu nutzen, je nach Projektart:
 ### Option B: WordPress
 
 Ghost CSS beinhaltet ein natives WordPress Plugin. Erstelle einen Ordner (ghostcss) unter wp-content/plugins/ und füge die Dateien und Ordner dieses Repositries hinzu.
+Du kannst Farben, Spacing, Typografie, Layout und Radius direkt im WordPress Dashboard konfigurieren. Du findest Ghost CSS unter "Einstellungen > Ghost CSS".
 
 ---
 
